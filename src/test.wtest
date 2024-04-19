@@ -1,0 +1,20 @@
+import example.*
+
+test "Galvan y sus deuda" {
+	
+	galvan.gastar(40000)
+	assert.equals(40000,galvan.deuda())
+	assert.equals(0,galvan.dineroActual())
+	galvan.gastar(80000)
+	assert.equals(120000,galvan.deuda())
+	assert.equals(0,galvan.dineroActual())
+	galvan.sueldo()
+	assert.equals(0,galvan.deuda())
+	assert.equals(30000,galvan.dineroActual())
+	galvan.gastar(250000)
+	assert.equals(220000,galvan.deuda())
+	assert.equals(0,galvan.dineroActual())
+	galvan.sueldo()
+	assert.equals(70000,galvan.deuda())
+	assert.equals(0,galvan.dineroActual())
+}
